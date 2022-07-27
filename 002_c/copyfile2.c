@@ -2,6 +2,8 @@
 
 // gcc copyfile2.c -o copyfile2 && ./copyfile2 copyfile2.c  newwords.txt
 
+// add two numbers
+
 int main(int argc, char *argv[])
 {
     FILE *p1, *p2;
