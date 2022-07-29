@@ -30,6 +30,7 @@ int main(int argc, char **argv)
     {
         put(i);
         g = get();
+        printf("%d\n", g);
     }
     
     return 0;
