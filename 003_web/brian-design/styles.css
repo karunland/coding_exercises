@@ -111,7 +111,7 @@
 @media screen and (max-width: 960px) {
     .navbar-container {
         display: flex;
-        justify-content: space-between;
+        justifys-content: space-between;
         height: 80px;
         z-index: 1;
         width: 100%;
@@ -294,11 +294,12 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
+    color: #3498db;
 
 }
 
 .main-content {
-    color: #fff;
+    color: rgb(255, 255, 255);
     width: 100%;
 }
 
@@ -316,7 +317,7 @@
 }
 
 
-.main-content h2{
+.main-content h2 {
     font-size: 4rem;
     background: #400870;
     /* fallback for old browsers */
@@ -330,13 +331,14 @@
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
+
 .main-content p {
     margin-top: 1rem;
     font-size: 2rem;
     font-weight: 700;
 }
 
-.main-btn{
+.main-btn {
     font-size: 1.8rem;
     background: #2c3e50;
     /* fallback for old browsers */
@@ -353,14 +355,14 @@
     outline: none;
 }
 
-.main-btn a{
+.main-btn a {
     position: relative;
     z-index: 2;
     color: white;
     text-decoration: none;
 }
 
-.main-btn::after{
+.main-btn::after {
     position: absolute;
     content: '';
     top: 0;
@@ -370,12 +372,31 @@
     transition: all 0.35s;
     border-radius: 4px;
 }
-.main:hover{
-    color: white;
+
+.main:hover {
+    color: rgb(109, 34, 34);
 }
 
 .main:hover:after {
     width: 100%;
 
 }
+
+.main__img-contaier {
+    text-align: center;
+}
+
+.main__img-card {
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(37, 52, 140);
+    background-image: linear-gradient(to right, #00dbde, #fc00ff, 100%);
+    justify-content: center;
+}
+
+
 
