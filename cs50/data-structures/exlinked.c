@@ -10,6 +10,7 @@ typedef struct link
 node *create(int val);
 node *insert(node *head, int val);
 int find(node *head, int val);
+void destroy(node *head);
 
 int main()
 {
@@ -17,10 +18,30 @@ int main()
     new = insert(new, 12);
     new = insert(new, 11);
     new = insert(new, 10);
-    printf("%d\n", new->number);
-    printf("%d\n", new->node->number);
-    // printf("%d\n", new->node->node->number);
+    new = insert(new, 9);
 
+    // i even impress myself sometimes, Gzzzz
+
+    // printf("%d\n", new->number);
+    // printf("%d\n", new->node->number);
+    // printf("%d\n", new->node->node->number);
+    // printf("%d\n", new->node->node->node->number);
+    // printf("%d\n", new->node->node->node->node->number);
+
+    for (node *tmp = new; tmp != NULL; tmp = tmp->node)
+    {
+        // Within the node, we'll just print the number stored:
+        printf("%i\n", tmp->number);
+    }
+    
+    // works perfectly
+    destroy(new);
+    
+    // for (node *tmp = new; tmp != NULL; tmp = tmp->node)
+    // {
+        // Within the node, we'll just print the number stored:
+        // printf("%i\n", tmp->number);
+    // }
     return 0;
 }
 
@@ -41,18 +62,28 @@ node *insert(node *head, int val)
 {
     node *tmp = NULL;
     node *new = malloc(sizeof(node));
-    
-    new->number = val;
-    new->node = NULL;
 
-    for (tmp = head;; tmp = tmp->node)
+    new->number = val;
+    new->node = head;
+
+    return new;
+}
+
+void destroy(node *head)
+{
+    // 
+    if (head->node == NULL)
     {
-        if (tmp->node == NULL)
-        {
-            tmp->node = new;
-            head = tmp;
-            // free(tmp);
-            return head;
-        }
+        printf("if\n");
+        free(head);
+        return;
+    }
+    else
+    {
+        printf("else\n");
+        destroy(head->node);
+        free(head);
+        return;
+        
     }
 }
